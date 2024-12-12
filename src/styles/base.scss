@@ -1,0 +1,116 @@
+@use "sass:color";
+
+
+$color-brand: #7397F5;
+
+$color-font-main: #333333;
+$color-font-second: #AAAAAA;
+$color-font-hover: #125BAE;
+$color-font-bg: #E2EFFF;
+$color-font-history: #5A0488;
+
+$color-border: #D5D5D5;
+$color-icons: #CBCBCB;
+$scroll-bar: #F2F2F2;
+$color-white: #FFFFFF;
+$color-image-bg: #F8F8FA;
+
+$border-width: 1px;
+$header-height: 72px;
+$content-height: calc(100vh - $header-height);
+$aside-width: 280px;
+$header-padding-y: 6px;
+
+
+
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+@function rem($px_val) {
+  @return #{calc($px_val / 16)}rem;
+}
+
+$font-size-x-sm: 12;
+$line-height-x-sm: 14;
+
+$font-size-sm: 14;
+$line-height-sm: 16;
+
+@mixin text-secondary {
+  font-size: rem($font-size-sm);
+  line-height: rem($line-height-sm);
+  color: $color-font-second;
+}
+
+@mixin text-sm {
+  font-size: rem($font-size-sm);
+  line-height: rem($line-height-sm);
+  color: $color-font-main;
+}
+
+$font-size-md: 16;
+$line-height-md: 20;
+
+@mixin text-x-sm {
+  font-size: rem($font-size-x-sm);
+  line-height: rem($line-height-x-sm);
+}
+.text-x-sm {
+  @include text-x-sm;
+  & {
+    color: $color-font-second;
+  }
+}
+
+@mixin text-sm {
+  font-size: rem($font-size-sm);
+  line-height: rem($line-height-sm);
+}
+.text-sm {
+  @include text-sm;
+}
+
+@mixin text-md {
+  font-size: rem($font-size-md);
+  line-height: rem($line-height-md);
+}
+.text-md {
+  @include text-md;
+}
+
+@mixin text-title {
+  font-size: rem(16);
+  line-height: rem(20);
+  font-weight: bold;
+}
+
+
+@mixin adaptive_width {
+  margin: 0 auto;
+  @media (width > 1760px) {
+    max-width: 1760px;
+  }
+
+  @media (width > 1240px) and (width < 1760px) {
+    max-width: 1240px;
+  }
+  @media (width < 1240px) {
+    max-width: 100%;
+  }
+}
+
+// todo transition on underline
+@mixin link {
+  text-decoration: none;
+  color: #000;
+  &:hover {
+    text-decoration: underline;
+  }
+}
