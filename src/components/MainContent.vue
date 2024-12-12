@@ -1,7 +1,7 @@
 <script lang="ts">
 
 import {defineComponent} from "vue";
-import Card from "@/components/Card/Card.vue";
+import Card from "@/components/Card.vue";
 import Scrollable from "@/components/scrollable.vue";
 
 export default defineComponent({

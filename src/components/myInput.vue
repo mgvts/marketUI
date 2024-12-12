@@ -1,5 +1,5 @@
 <script lang="ts">
-import { defineComponent } from 'vue';
+import {defineComponent} from 'vue';
 import cross from '@/assets/delete.svg'
 
 export default defineComponent({
@@ -64,7 +64,10 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="input" :class="{ focused: isFocused, bordered }" :style="{ width, height }">
+  <div class="input"
+       :class="{ focused: isFocused, bordered }"
+       :style="{ width, height }"
+  >
     <div class="input__prepend" v-if="$slots.prepend">
       <slot name="prepend"></slot>
     </div>
@@ -77,7 +80,13 @@ export default defineComponent({
         v-bind="$attrs"
     />
     <div class="input__append">
-      <img v-show="showClearIcon && !$slots.append" @click="clearInput" :src="cross"></img>
+      <img
+          v-show="showClearIcon && !$slots.append"
+          @click="clearInput"
+          :src="cross"
+          style="cursor:
+          pointer" alt="default delete btn"
+      />
       <slot name="append"></slot>
     </div>
   </div>
@@ -113,11 +122,13 @@ export default defineComponent({
       outline: none;
     }
   }
+
   &__prepend {
     display: flex;
     justify-content: center;
     align-items: center;
   }
+
   &__append {
     display: flex;
     justify-content: center;

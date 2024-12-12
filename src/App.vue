@@ -19,8 +19,6 @@ export default defineComponent({
 </template>
 
 <style lang="scss">
-@use '@/styles/main.scss' as *;
-@use "@/styles/variables.scss" as *;
 @use '@/styles/base.scss' as *;
 
 .content {

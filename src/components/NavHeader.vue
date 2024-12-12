@@ -65,7 +65,7 @@ export default defineComponent({
         </template>
       </my-input>
 
-      <TonalBtn text="Найти"/>
+      <TonalBtn text="Найти" v-if="!isDesktop"/>
     </div>
     <nav class="header__links">
       <a href="#">Информация о компании</a>
@@ -76,10 +76,7 @@ export default defineComponent({
 </template>
 
 <style scoped lang="scss">
-@use '@/styles/main.scss' as *;
-@use "@/styles/variables.scss" as *;
 @use '@/styles/base.scss' as *;
-@use '@/styles/main.css' as *;
 
 .header {
   @include adaptive_width;
@@ -95,6 +92,7 @@ export default defineComponent({
 
 
   &__logo {
+    user-select: none;
     width: 257px;
     display: flex;
     flex-direction: row;
@@ -135,7 +133,7 @@ export default defineComponent({
     gap: 20px;
 
     a {
-      @include link;
+      @include link-animate;
     }
   }
 }

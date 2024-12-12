@@ -42,13 +42,19 @@ export default defineComponent({
 </template>
 
 <style lang="scss" scoped>
-@use '@/styles/base.scss' as *;
+@use '@/styles/base' as *;
 
 .card {
   display: flex;
   flex-direction: column;
   gap: 16px;
   font-family: 'PT Sans', sans-serif;
+  transition: box-shadow 0.2s;
+  padding: 5px; // without padding box shadow doesnt looks well
+
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
 
   &__image {
     background: $color-image-bg;

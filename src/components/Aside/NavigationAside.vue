@@ -28,7 +28,6 @@ export default defineComponent({
         name: 'Название категории 1',
         content: [
           this.createPath(),
-          this.createPath(),
           {
             name: 'nested 1',
             content: [this.createPath(), this.createPath(), this.createPath()],
